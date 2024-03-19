@@ -1,3 +1,26 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container mx-auto px-4">
+        <h1 class="text-white
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>WIOS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+</body>
+</html> 
+
+<!-- 
 <!DOCTYPE html>
 <html>
 
@@ -18,27 +41,43 @@
     <div class="flex justify-center items-center h-full">
       <div class="bg-white bg-opacity-50 rounded-lg shadow-lg p-16">
         <h2 class="text-2xl font-semibold mb-8 text-center">Login</h2>
-        <form action="#" method="POST">
+
+        @if (session('success'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('seccess') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif 
+
+        @if (session('loginError'))
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif
+
+        <form action="/login" method="post">
+          @csrf
           <div class="mb-4">
             <label for="username" class="block text-gray-600 text-sm font-medium mb-6">
-              <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required placeholder="Username">
+                <input type="username" id="Username" name="username" @error('username') is invalid @enderror class="form-control r w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" 
+                placeholder="Username" autofocus required value="{{ old('username') }}">
             </label>
+            @error('username')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
           </div>
-          <div class="mb-4 relative">
-            <label for="password" class="block text-gray-600 text-sm font-medium mb-4">
-              <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required placeholder="Password">
-            </label>
-            <span id="togglePassword" class="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
-              <i class="far fa-eye text-gray-500 hover:text-blue-500"></i>
-            </span>
-          </div>
-          <div class="mb-4 flex items-center justify-between">
-            <label for="remember" class="flex items-center cursor-pointer">
-              <input type="checkbox" id="remember" name="remember" class="form-checkbox text-blue-500">
-              <span class="ml-2 text-gray-600 text-sm">Ingat Saya</span>
-            </label>
-            <a href="#" class="text-blue-500 text-sm">Lupa Password?</a>
-          </div>
+            <div class="mb-4 relative">
+                <label for="password" class="block text-gray-600 text-sm font-medium mb-4">
+                    <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" 
+                    required placeholder="Password">
+                </label>
+                <span id="togglePassword" class="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
+                    <i class="far fa-eye text-gray-500 hover:text-blue-500"></i>
+                </span>
+            </div>
           <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Login</button>
         </form>
       </div>
@@ -56,4 +95,4 @@
     });
   </script>
 </body>
-</html>
+</html> -->
