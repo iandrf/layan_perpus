@@ -13,7 +13,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'default' => env('FILESYSTEM_DISK', 'local'),
+=======
+    'default' => env('FILESYSTEM_DISK', 'public'),
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +36,11 @@ return [
 
         'local' => [
             'driver' => 'local',
+<<<<<<< HEAD
             'root' => storage_path('app'),
+=======
+            'root' => storage_path('public'),
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
             'throw' => false,
         ],
 

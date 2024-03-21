@@ -14,9 +14,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardKPController;
 use App\Models\Petugas;
+<<<<<<< HEAD
 use App\Http\Controllers\ProductController;
 
 
+=======
+use App\Http\Controllers\PostController;
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +36,20 @@ use App\Http\Controllers\ProductController;
 //     return view('welcome');
 // });
 
+<<<<<<< HEAD
 
+=======
+Route::get('/', function () {
+    $postbukus = Postbuku::latest()->paginate(4);
+    return view('home',[
+        'postbukus'=>$postbukus,
+    ]);
+});
+
+Route::get('/test', function(){
+    return view ('test');
+});
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 
 Route::get('/kp', function () {
     $petugas = Petugas::all();
@@ -67,9 +84,19 @@ Route::get('/sumbangan-buku', function () {
     ]);
 });
 
+<<<<<<< HEAD
 Route::get('/Login-admin', function () {
     return view('Login-admin');
 });
+=======
+Route::get('/Login',  function () {
+    $postbukus = Postbuku::latest()->paginate(4);
+    return view('home',[
+        'postbukus'=>$postbukus,
+    ]);
+});
+
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 Route::get('/admin-lta', function () {
     return view('admin-lta');
 });
@@ -85,10 +112,20 @@ Route::get('/admin-bebaspustaka', function () {
 Route::get('/admin-kp', function () {
     return view('admin-kp');
 });
+<<<<<<< HEAD
 Route::get('/products', [ProductController::class, 'index']);
 
 
 
+=======
+Route::get('/postb', function () {
+    return view('postbuku');
+});
+
+Route::get('protected', ['middleware' => ['auth', 'admin'], function() {
+    return "this page requires that you be logged in and an Admin";
+}]);
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 Route::resource('/mahasiswa', MahasiswaController::class);
 
 Route::resource('/penyerahankp', PenyerahanKPController::class);
@@ -103,6 +140,7 @@ Route::post('sumbanganb/search', [SumbanganBukuController::class, 'search'])->na
 route::resource('/validasita', ValidasiTAController::class,);
 Route::get('validasita/search', [ValidasiTAController::class, 'search'])->name('validasita.search');
 
+<<<<<<< HEAD
 route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 
 route::post('/login', [LoginController::class, 'authenticate']);
@@ -119,3 +157,14 @@ route::post('/dashboardKP/search', [MahasiswaController::class, 'search']);
 
 // view nav home
 // <a class="nav-link" "{{($active === "categories") ? 'active' :''}}" href="/categories">categories</a>
+=======
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::post('post', [PostController::class, 'store'])->name('post');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+route::post('/dashboard/search', [MahasiswaController::class, 'search']);
+
+route::post('/dashboardKP/search', [MahasiswaController::class, 'search']);
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033

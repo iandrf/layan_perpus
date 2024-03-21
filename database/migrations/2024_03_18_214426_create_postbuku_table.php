@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('postbuku', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username');
-            $table->string('password');
-<<<<<<< HEAD
-=======
-            $table->string('role')->default('user');
->>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
+            $table->string('title');
+            $table->string('description');
+            $table->string('image')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('postbuku_');
     }
 };

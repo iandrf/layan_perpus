@@ -9,6 +9,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <title>Dashboard admin</title>
 </head>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 <body>
     
 <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -171,6 +175,13 @@
                                         </td>
 
                                     </tr>
+<<<<<<< HEAD
+=======
+                                    
+                                    <div class="flex items-center ml-4">
+                    {{ $DashboardLTA->links('pagination::tailwind') }}
+                </div>   
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
                                 @endforeach
                             @else
                                 <p class="text-red-500 pb-5">Hasil Pencarian Tidak Ditemukan.</p>
@@ -178,9 +189,13 @@
                         </tbody>  
                     </table>
                 </div>             
+<<<<<<< HEAD
                 <div class="flex items-center ml-4">
                     {{ $DashboardLTA->links('pagination::tailwind') }}
                 </div>              
+=======
+                 
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
             </div>
         </div>
     </div>

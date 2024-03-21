@@ -40,6 +40,22 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+<<<<<<< HEAD
+=======
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
     ],
 
     /*
@@ -65,6 +81,11 @@ return [
             'model' => App\Models\User::class,
         ],
 
+<<<<<<< HEAD
+=======
+      
+
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

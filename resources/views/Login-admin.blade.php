@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
@@ -21,6 +22,8 @@
 </html> 
 
 <!-- 
+=======
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 <!DOCTYPE html>
 <html>
 
@@ -29,6 +32,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
 <title>WIOS</title>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 
@@ -56,6 +63,7 @@
           </div>
         @endif
 
+<<<<<<< HEAD
         <form action="/login" method="post">
           @csrf
           <div class="mb-4">
@@ -78,6 +86,25 @@
                     <i class="far fa-eye text-gray-500 hover:text-blue-500"></i>
                 </span>
             </div>
+=======
+        <form action = "{{ route('actionlogin') }}" method="post">
+          @csrf
+          <div class="mb-4">
+          <label for="username" class="block text-gray-600 text-sm font-medium mb-6">
+    <input type="text" id="username" name="username" class="form-control w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 @error('username') is-invalid @enderror" 
+    placeholder="username" autofocus required value="{{ old('username') }}">
+    @error('username')
+        <span class="text-red-500 text-xs">{{ $message }}</span>
+    @enderror
+</label>
+          </div>
+          <div class="mb-4 relative">
+  <label for="password" class="block text-gray-600 text-sm font-medium mb-4">
+    <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required placeholder="password">
+  
+  <i class="bi bi-eye-slash" id="togglePassword"></i></label>
+</div>
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
           <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Login</button>
         </form>
       </div>
@@ -85,6 +112,7 @@
   </div>
 
   <script>
+<<<<<<< HEAD
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');
 
@@ -96,3 +124,16 @@
   </script>
 </body>
 </html> -->
+=======
+   const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function() {
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  this.classList.toggle('bi-eye-slash'); // Toggle icon class
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033

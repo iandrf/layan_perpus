@@ -141,6 +141,12 @@
                                             {{$penyerhanKP->petugas->Nama}}
                                         </td>
                                     </tr>
+<<<<<<< HEAD
+=======
+                                    <div class="flex items-center ml-4">
+                    {{ $DashboardKP->links('pagination::tailwind') }}
+                </div>     
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
                                 @endforeach
                             @else
                                 <p class="text-red-500 pb-5">Hasil Pencarian Tidak Ditemukan.</p>
@@ -148,9 +154,13 @@
                         </tbody> 
                     </table>
                 </div>             
+<<<<<<< HEAD
                 <div class="flex items-center ml-4">
                     {{ $DashboardKP->links('pagination::tailwind') }}
                 </div>              
+=======
+                      
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
                 </div>
             </div>
         </div>

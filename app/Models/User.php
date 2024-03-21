@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'username',
         'password',
+<<<<<<< HEAD
+=======
+        'role',
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
     ];
 
     /**
@@ -28,9 +32,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+<<<<<<< HEAD
     protected $hidden = [
         'password',
     ];
+=======
+    public function isAdmin()
+{
+    return $this->admin; // this looks for an admin column in your users table
+}
+
+    public function setPasswordAttribute($value)
+{
+   $this->attributes['password'] = bcrypt($value);
+}
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
 
     /**
      * The attributes that should be cast.

@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Peminjaman Buku</title>
+=======
+    <title>Document</title>
+>>>>>>> 38dd40ec4813f0e29cd7572812b3f23c9476c033
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss"></style>
 </head>
